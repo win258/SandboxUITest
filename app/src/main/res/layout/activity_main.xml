@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/app_master_main_page_drawer_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="56dip"
+            android:background="@color/app_master_common_activity_bg">
+
+            <ScrollView
+                android:id="@+id/app_master_main_page_scrollview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/app_master_main_page_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#ff3e435c">
+
+                        <LinearLayout
+                            android:id="@+id/app_master_main_page_top_area_root"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ff3e435c"
+                            android:orientation="vertical">
+
+                            <include
+                                android:id="@+id/app_master_main_page_top_area_layout"
+                                layout="@layout/app_master_layout_main_page_top_area" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/app_master_main_page_top_area_temp"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+
+                            <RelativeLayout
+                                android:id="@+id/app_master_main_page_bottom_area_root"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent">
+
+                                <include
+                                    android:id="@+id/app_master_main_page_bottom_area_layout"
+                                    layout="@layout/app_master_layout_main_bottom_area"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true" />
+
+                                <RelativeLayout
+                                    android:id="@+id/app_master_main_page_top_area_loading_root"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_above="@id/app_master_main_page_bottom_area_layout"
+                                    android:background="#ff3e435c"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:id="@+id/app_master_main_page_top_area_loading"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true">
+
+                                        <ImageView
+                                            android:id="@+id/app_master_main_page_top_area_loading_img"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:scaleType="center"
+                                            android:src="@mipmap/public_guide_loading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="5.0dip"
+                                            android:gravity="center_vertical"
+                                            android:text="AAA"
+                                            android:textColor="@color/app_master_color_white"
+                                            android:textSize="12.0sp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/left_drawer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="start"
+            android:layout_marginBottom="-57.0dip"
+            android:layout_marginTop="@dimen/app_master_store_home_title_bar_height"
+            android:background="#00000000"
+            android:gravity="top">
+
+            <include
+                android:id="@+id/left_drawer_item"
+                layout="@layout/store_drawer_layout"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+
+</RelativeLayout>
