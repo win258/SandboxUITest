@@ -1,1 +1,3 @@
 # SandboxUITest
+
+For testing only.
