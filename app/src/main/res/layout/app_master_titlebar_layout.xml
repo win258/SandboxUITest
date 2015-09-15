@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_master_titlebar_main_layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_master_tilebar_bg_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/app_master_titlebar_main_layout_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/app_master_titlebar_height"
+        android:background="@color/app_master_tilebar_bg_color">
+
+        <ImageView
+            android:id="@+id/app_master_title_bar_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/app_master_titlebar_logo_margin_left"
+            android:layout_marginRight="@dimen/app_master_titlebar_logo_margin_right"
+            android:src="@mipmap/app_master_title_icon" />
+
+        <TextView
+            style="@style/app_master_titlebar_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/app_master_title_bar_logo"
+            android:text="AAA" />
+
+        <ImageView
+            android:id="@+id/app_master_titlebar_main_more"
+            android:layout_width="@dimen/app_master_titlebar_height"
+            android:layout_height="@dimen/app_master_titlebar_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/app_master_menu_selector"
+            android:src="@mipmap/app_master_permission_title_bar_more" />
+
+        <ImageView
+            android:id="@+id/app_master_titlebar_main_store"
+            android:layout_width="@dimen/app_master_titlebar_height"
+            android:layout_height="@dimen/app_master_titlebar_height"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/app_master_titlebar_main_more"
+            android:background="@drawable/app_master_menu_selector"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_main_title_bar_store" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/app_master_titlebar_normal_layout_root"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/app_master_titlebar_height"
+        android:background="@color/app_master_tilebar_bg_color"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/app_master_titlebar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/app_master_titlebar_logo_margin_right"
+            android:background="@drawable/app_master_menu_selector"
+            android:src="@mipmap/app_master_main_titlebar_back_btn" />
+
+        <FrameLayout
+            android:id="@+id/app_master_titlebar_normal_root"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/app_master_titlebar_normal_more"
+                android:layout_width="@dimen/app_master_titlebar_height"
+                android:layout_height="@dimen/app_master_titlebar_height"
+                android:background="@drawable/app_master_menu_selector"
+                android:scaleType="centerInside"
+                android:src="@mipmap/app_master_permission_title_bar_more" />
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/app_master_titlebar_main_loc"
+            android:layout_width="@dimen/app_master_titlebar_loc_dev_width"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/app_master_titlebar_normal_root"
+            android:background="@drawable/app_master_menu_selector"
+            android:scaleType="centerInside"
+            android:src="@mipmap/app_master_permission_title_bar_loc" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/app_master_toolbar_height"
+            android:layout_marginRight="@dimen/app_master_toolbar_height">
+
+            <TextView
+                android:id="@+id/app_master_titlebar_title"
+                style="@style/app_master_titlebar_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="AAA" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

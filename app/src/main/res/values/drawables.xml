@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="app_master_store_list_item_app_install_normal">#ff68c408</item>
+    <item type="drawable" name="app_master_store_list_item_app_install_pressed">#ff539d06</item>
+    <item type="drawable" name="bg_edittext">false</item>
+    <item type="drawable" name="bg_edittext_focused">false</item>
+    <item type="drawable" name="bg_edittext_normal">false</item>
+    <item type="drawable" name="customer_btn_cancle_selector">false</item>
+    <item type="drawable" name="customer_listview_dialog_btn_selector">false</item>
+    <item type="drawable" name="hot_loc_tag_bg_selector">false</item>
+    <item type="drawable" name="loading">false</item>
+    <item type="drawable" name="app_master_store_common_listview_item_normal">#ffffffff</item>
+    <item type="drawable" name="app_master_store_common_listview_item_pressed">#ffe5e5e5</item>
+    <item type="drawable" name="app_master_store_list_item_app_pause_normal">#ffeeeeee</item>
+    <item type="drawable" name="app_master_store_list_item_app_pause_pressed">#ffc3c3c3</item>
+    <item type="drawable" name="app_master_store_setting_seekbar_background">#ffb3e183</item>
+    <item type="drawable" name="app_master_store_setting_seekbar_progress">#ff68c408</item>
+    <item type="drawable" name="customer_listview_dialog_btn_normal">#ff3f51b5</item>
+    <item type="drawable" name="customer_listview_dialog_btn_pressed">#ff2c397e</item>
+    <item type="drawable" name="customer_listview_dialog_cancel_normal">#ff95a5a5</item>
+    <item type="drawable" name="customer_listview_dialog_cancel_pressed">#ffb3c3c7</item>
+    <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
+</resources>

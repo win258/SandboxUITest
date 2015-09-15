@@ -5,4 +5,48 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="app_master_titlebar_text_style">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@color/app_master_titlebar_text_color</item>
+    </style>
+
+    <style name="ToolBarStyle">
+        <item name="popupTheme">@style/UUToolbarPopupTheme</item>
+        <item name="theme">@style/UUToolbarTheme</item>
+    </style>
+
+    <style name="UUToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:panelColorForeground">@android:color/white</item>
+        <item name="android:panelColorBackground">@drawable/menu_item_selector</item>
+        <item name="listChoiceBackgroundIndicator">@drawable/menu_item_selector</item>
+    </style>
+    <style name="UUToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">#ffffffff</item>
+        <item name="android:textColorSecondary">#ffffffff</item>
+        <item name="android:panelColorForeground">@android:color/white</item>
+        <item name="android:panelColorBackground">@drawable/menu_item_selector</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="app_master_simple_dialog_title">
+        <item name="android:textSize">19.0sp</item>
+        <item name="android:textColor">@color/app_master_simple_dialog_title_color</item>
+    </style>
+    <style name="app_master_simple_dialog_win_content">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/app_master_simple_dialog_title_color</item>
+    </style>
+    <style name="app_master_simple_dialog_content_min_textview">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/app_master_permission_dialog_default_text_color</item>
+    </style>
+    <style name="app_master_simple_dialog_button_cancle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/app_master_permission_dialog_default_text_color</item>
+    </style>
+    <style name="app_master_simple_purge_dialog_button_submit">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/app_master_permission_purge_dialog_high_text_color</item>
+    </style>
+
 </resources>

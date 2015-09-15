@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_master_common_activity_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="49.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_master_color_white">
+
+        <Button
+            android:id="@+id/btn_ignore"
+            android:layout_width="@dimen/app_master_app_wash_white_toolbar_item_width"
+            android:layout_height="@dimen/app_master_app_wash_white_toolbar_item_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/app_master_store_activity_padding"
+            android:background="@drawable/app_master_store_list_item_pause_btn_selector"
+            android:gravity="center"
+            android:text="AAA"
+            android:textColor="@color/app_master_color_black"
+            android:textSize="14.0sp" />
+
+        <Button
+            android:id="@+id/btn_bottom"
+            android:layout_width="@dimen/app_master_app_wash_white_toolbar_item_width"
+            android:layout_height="@dimen/app_master_app_wash_white_toolbar_item_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/app_master_store_activity_padding"
+            android:background="@drawable/app_master_common_bottom_btn_selector"
+            android:gravity="center"
+            android:text="BBB"
+            android:textColor="@color/app_master_titlebar_text_color"
+            android:textSize="14.0sp" />
+
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/permission_app_detail_tip_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:background="@color/app_master_tilebar_bg_color">
+
+        <LinearLayout
+            android:id="@+id/permission_app_detail_topic_area"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_master_tilebar_bg_color"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rl_app_base_info_tip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15.0dip"
+                android:paddingLeft="16.0dip">
+
+                <ImageView
+                    android:id="@+id/iv_appIcon_tip"
+                    android:layout_width="@dimen/app_master_common_listview_icon_size"
+                    android:layout_height="@dimen/app_master_common_listview_icon_size"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/app_master_icon" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/app_master_common_listview_item_padding_top_bottom"
+                    android:layout_toRightOf="@id/iv_appIcon_tip"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingBottom="2.0dip"
+                    android:paddingTop="2.0dip">
+
+                    <TextView
+                        android:id="@+id/tv_appName_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/app_name"
+                        android:textColor="@color/permission_scan_page_titlebar_text_color"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_appVerison_Name_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="version"
+                        android:textColor="@color/permission_scan_page_titlebar_text_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/permission_detail_page_top_tip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/permission_app_detail_tip_layout"
+        android:background="#fffadd60"
+        android:minHeight="48.0dip">
+
+        <ImageView
+            android:id="@+id/permission_detail_page_top_tip_close"
+            android:layout_width="@dimen/permission_batch_purge_backup_tip_height"
+            android:layout_height="@dimen/permission_batch_purge_backup_tip_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/permission_batch_purge_backup_close_selector"
+            android:scaleType="centerInside"
+            android:src="@mipmap/public_close_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginRight="@dimen/permission_batch_purge_backup_tip_height"
+            android:text="绿色软件可能会被某些第三方软件误以为盗版软件,请放心使用"
+            android:textColor="#ff4caf50"
+            android:textSize="12.0sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/rl_bottom"
+        android:layout_below="@id/permission_detail_page_top_tip"
+        android:background="@color/app_master_common_activity_bg"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        android:scrollingCache="false"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rl_performance"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_app_base_info"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:background="@drawable/app_master_list_background_selector"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left">
+
+                <ImageView
+                    android:id="@+id/iv_appIcon"
+                    android:layout_width="@dimen/app_master_common_listview_icon_size"
+                    android:layout_height="@dimen/app_master_common_listview_icon_size"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/app_master_icon" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/app_master_common_listview_item_padding_top_bottom"
+                    android:layout_toRightOf="@id/iv_appIcon"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_appName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/app_name"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_appVerison_Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="version"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_performance_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_app_base_info"
+                android:layout_marginLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:layout_marginTop="@dimen/app_master_common_activity_padding"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="省电加速"
+                android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                android:textSize="@dimen/app_master_common_text_size_14" />
+
+            <RelativeLayout
+                android:id="@+id/rl_app_performance"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/tv_performance_tip"
+                android:layout_marginTop="@dimen/app_master_common_listview_item_padding_left_right"
+                android:background="@drawable/app_master_list_background_selector"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_auto_completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="开机自启"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_auto_completed_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_boost_combined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_background_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_app_performance"
+                android:layout_marginLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:layout_marginTop="@dimen/app_master_common_activity_padding"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="后台运行"
+                android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                android:textSize="@dimen/app_master_common_text_size_14"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rl_app_background"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/rl_app_performance"
+                android:layout_marginTop="@dimen/app_master_common_listview_item_padding_left_right"
+                android:background="@drawable/app_master_list_background_selector"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="后台运行"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_background_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_bg_combined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_notification_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_app_background"
+                android:layout_marginLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:layout_marginTop="@dimen/app_master_common_activity_padding"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="防骚扰"
+                android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                android:textSize="@dimen/app_master_common_text_size_14" />
+
+            <RelativeLayout
+                android:id="@+id/rl_show_notification"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/tv_notification_tip"
+                android:layout_marginTop="@dimen/app_master_common_listview_item_padding_left_right"
+                android:background="@drawable/app_master_list_background_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_show_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="通知栏消息"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_show_notification_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_show_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_net_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_show_notification"
+                android:layout_marginLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:layout_marginTop="@dimen/app_master_common_activity_padding"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="网络管理"
+                android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                android:textSize="@dimen/app_master_common_text_size_14" />
+
+            <RelativeLayout
+                android:id="@+id/rl_show_net_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/tv_net_tip"
+                android:layout_marginTop="@dimen/app_master_common_listview_item_padding_left_right"
+                android:background="@drawable/app_master_list_background_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_show_net_wifi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="Wi-Fi联网"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_show_net_wifi_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_show_net_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_show_net_gprs"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/rl_show_net_wifi"
+                android:layout_marginTop="@dimen/app_master_common_listview_item_padding_left_right"
+                android:background="@drawable/app_master_list_background_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_show_net_gprs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="移动数据联网"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_show_net_gprs_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_show_net_gprs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_all_sensitive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_show_net_gprs"
+                android:layout_marginBottom="@dimen/app_master_common_activity_padding"
+                android:layout_marginLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:layout_marginTop="@dimen/app_master_common_activity_padding"
+                android:text="隐私保护"
+                android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                android:textSize="@dimen/app_master_common_text_size_14" />
+
+            <LinearLayout
+                android:id="@+id/rl_app_permission_config"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_all_sensitive"
+                android:orientation="vertical"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rl_fake_location"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/rl_app_permission_config"
+                android:background="@drawable/app_master_list_background_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_fake_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="访问地理位置"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_fake_location_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_fake_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/rl_bottom_shaddow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_bottom"
+        android:background="@drawable/app_master_toolbar_anchor" />
+
+    <RelativeLayout
+        android:id="@+id/rl_loading"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/permission_app_detail_tip_layout"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar"
+            android:layout_width="@dimen/app_master_click_to_refresh_btn_size"
+            android:layout_height="@dimen/app_master_click_to_refresh_btn_size"
+            android:indeterminate="false"
+            android:indeterminateDrawable="@anim/app_master_loading" />
+    </RelativeLayout>
+</RelativeLayout>
