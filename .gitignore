@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-=======
 # Built application files
 *.apk
 *.ap_
@@ -26,6 +17,19 @@ gen/
 build/
 /*/build/
 
+# IDEA
+*.iml
+.idea/.name
+.idea/encodings.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/libraries
+
 # Local configuration file (sdk path, etc)
 local.properties
 
@@ -34,4 +38,3 @@ proguard/
 
 # Log Files
 *.log
->>>>>>> 972078b7de5e2104be4c910c2dd0804cb10874f3

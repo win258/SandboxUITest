@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/permission_tip_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/app_master_expand_listview_child_item_height"
+        android:layout_marginTop="5.0dip"
+        android:background="@drawable/app_master_list_background_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16.0dip">
+
+        <TextView
+            android:id="@+id/tv_appDes"
+            style="@style/app_master_text_size_14"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:ellipsize="end"
+            android:text="安装前可以配置权限，安装完成后立即生效并且可随时修改"
+            android:textColor="@color/app_detail_permission_tip_text_color" />
+
+        <ImageView
+            android:id="@+id/permission_tip_bar_close"
+            android:layout_width="@dimen/app_master_expand_listview_child_item_height"
+            android:layout_height="@dimen/app_master_expand_listview_child_item_height"
+            android:background="@drawable/app_master_list_background_selector"
+            android:scaleType="centerInside"
+            android:src="@mipmap/app_master_edit_del_btn" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/permission_tip_bar">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:id="@+id/permission_performance_tip_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/permission_performance_tip_bar_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_master_list_background_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/monitoring_sum_item_padding_top_bottom"
+                        android:layout_marginLeft="@dimen/monitoring_log_item_padding_top_bottom"
+                        android:layout_marginTop="@dimen/monitoring_sum_item_padding_top_bottom"
+                        android:src="@mipmap/ic_warning" />
+
+                    <TextView
+                        android:id="@+id/permission_unmonitored_tip_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/monitoring_log_item_padding_top_bottom"
+                        android:textColor="@color/permission_unmonitored_tip_color"
+                        android:textSize="14.0sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/monitoring_log_item_padding_top_bottom"
+                    android:layout_marginTop="@dimen/monitoring_sum_item_padding_top_bottom"
+                    android:text="更换绿色版后，可以管理以下权限"
+                    android:textColor="@color/permission_unmonitored_tip_color_green"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@id/rl_app_performance"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/permission_performance_tip_bar"
+                android:layout_marginTop="@dimen/app_master_common_listview_item_padding_left_right"
+                android:background="@drawable/app_master_list_background_selector"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@id/tv_auto_completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="开机自启"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@id/tv_auto_completed_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@id/cb_boost_combined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@id/rl_app_background"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/rl_app_performance"
+                android:background="@drawable/app_master_list_background_selector"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@id/tv_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="后台运行"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@id/tv_background_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@id/rl_show_notification"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/rl_app_background"
+                android:background="@drawable/app_master_list_background_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@id/tv_show_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="通知栏消息"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@id/tv_show_notification_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@id/cb_show_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_show_wifi"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@id/rl_show_notification"
+                android:background="@drawable/app_master_list_background_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_show_wifi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="AAA"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_show_wifi_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_show_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_show_gprs"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/app_master_common_listview_item_height"
+                android:layout_below="@+id/rl_show_wifi"
+                android:background="@drawable/app_master_list_background_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/app_master_read_permission_expand_listview_group_text_margin_left">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/app_master_common_listview_item_height"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_show_gprs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/app_master_common_listview_item_padding_left_right"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="AAA"
+                        android:textColor="@color/app_master_color_black"
+                        android:textSize="@dimen/app_master_common_text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_show_gprs_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="允许"
+                        android:textColor="@color/app_master_permission_manager_expand_listview_item_des_color"
+                        android:textSize="@dimen/app_master_common_text_size_14" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/cb_show_gprs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/app_master_common_switch_bg"
+                    android:button="@drawable/app_master_common_switch_selector"
+                    android:paddingRight="10.0dip" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@id/rl_app_permission_config"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_show_gprs"
+                android:orientation="vertical"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

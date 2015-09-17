@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/app_master_permission_dialog_width"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -30,15 +29,16 @@
                     android:visibility="gone" />
 
                 <TextView
+                    android:id="@+id/dialog_title"
                     style="@style/app_master_simple_dialog_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="提示" />
+                    android:layout_gravity="center_vertical" />
             </LinearLayout>
         </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/dialog_content"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/app_master_simple_dialog_content_margin_left"
@@ -50,7 +50,8 @@
                 android:id="@+id/app_master_permission_dialog_app_icon"
                 android:layout_width="@dimen/app_master_permission_dialog_app_icon_size"
                 android:layout_height="@dimen/app_master_permission_dialog_app_icon_size"
-                android:layout_gravity="center|left|top" />
+                android:layout_gravity="center|left|top"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="0.0dip"
@@ -61,7 +62,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/app_master_permission_dialog_app_name"
+                    android:id="@+id/dialog_content_text"
                     style="@style/app_master_simple_dialog_win_content"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />
@@ -71,23 +72,25 @@
                     style="@style/app_master_simple_dialog_content_min_textview"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="尝试获取你的%s" />
+                    android:visibility="gone" />
             </LinearLayout>
         </LinearLayout>
 
         <View
+            android:id="@+id/dialog_bottom_divider"
             android:layout_width="fill_parent"
             android:layout_height="1.0px"
             android:layout_marginTop="@dimen/app_master_simple_dialog_checkbox_margin_top"
             android:background="@color/app_master_simple_dialog_divider_color" />
 
         <RelativeLayout
+            android:id="@+id/dialog_bottom_content"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/app_master_permission_dialog_title_height"
             android:orientation="horizontal">
 
             <View
-                android:id="@+id/app_master_permission_dialog_center_view"
+                android:id="@+id/dialog_bottom_center_view"
                 android:layout_width="1.0dip"
                 android:layout_height="@dimen/app_master_toolbar_ver_divider_height"
                 android:layout_centerInParent="true"
@@ -96,10 +99,10 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_toLeftOf="@+id/app_master_permission_dialog_center_view">
+                android:layout_toLeftOf="@+id/dialog_bottom_center_view">
 
                 <LinearLayout
-                    android:id="@+id/app_master_permission_dialog_forbid_layout"
+                    android:id="@+id/dialog_back"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_centerInParent="true"
@@ -107,12 +110,11 @@
                     android:gravity="center">
 
                     <TextView
-                        android:id="@+id/app_master_permission_dialog_forbid_tv"
+                        android:id="@+id/dialog_back_text"
                         style="@style/app_master_simple_dialog_button_cancle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:text="AAA" />
+                        android:clickable="false" />
 
                 </LinearLayout>
             </RelativeLayout>
@@ -120,10 +122,10 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_toRightOf="@id/app_master_permission_dialog_center_view">
+                android:layout_toRightOf="@+id/dialog_bottom_center_view">
 
                 <LinearLayout
-                    android:id="@+id/app_master_permission_dialog_allow_layout"
+                    android:id="@+id/dialog_confirm"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_centerInParent="true"
@@ -131,12 +133,11 @@
                     android:gravity="center">
 
                     <TextView
-                        android:id="@+id/app_master_permission_dialog_allow_tv"
+                        android:id="@+id/dialog_confirm_text"
                         style="@style/app_master_simple_purge_dialog_button_submit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:text="BBB" />
+                        android:clickable="false" />
                 </LinearLayout>
             </RelativeLayout>
         </RelativeLayout>
