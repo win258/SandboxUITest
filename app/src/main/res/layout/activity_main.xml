@@ -126,5 +126,58 @@
         </RelativeLayout>
     </android.support.v4.widget.DrawerLayout>
 
+    <RelativeLayout
+        android:id="@+id/app_master_main_page_titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/app_master_store_home_title_bar_height"
+        android:background="@color/store_titlebar_trans_color">
+
+        <FrameLayout
+            android:id="@+id/app_master_main_page_drawer"
+            android:layout_width="@dimen/app_master_store_home_title_bar_height"
+            android:layout_height="@dimen/app_master_store_home_title_bar_height"
+            android:background="@drawable/store_title_bar_item_selector"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/drawer_indicator"
+                android:layout_width="@dimen/app_master_store_home_title_bar_height"
+                android:layout_height="@dimen/app_master_store_home_title_bar_height"
+                android:layout_gravity="start"
+                android:background="@drawable/drawer_arrow_selector"
+                android:scaleType="centerInside" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/app_master_main_page_titlebar_safe_root"
+            android:layout_width="@dimen/app_master_store_home_title_bar_height"
+            android:layout_height="@dimen/app_master_store_home_title_bar_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@drawable/store_title_bar_item_selector">
+
+            <ImageView
+                android:id="@+id/app_master_main_page__titlebar_safe_icon"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="centerInside"
+                android:src="@mipmap/app_master_safe_icon" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/app_master_main_page_titlebar_search_root"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/app_master_store_home_title_bar_height"
+            android:layout_toLeftOf="@id/app_master_main_page_titlebar_safe_root"
+            android:layout_toRightOf="@id/app_master_main_page_drawer"
+            android:paddingLeft="@dimen/app_master_store_margin_10"
+            android:paddingRight="@dimen/app_master_store_margin_10">
+
+
+        </FrameLayout>
+    </RelativeLayout>
+
 
 </RelativeLayout>
